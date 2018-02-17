@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/17 21:08:47 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/17 21:22:16 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/17 21:48:56 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ typedef struct	s_tree
 	int				type;
 	int				nb;
 	char			*opt;
-	struct s_tree	low;
-	struct s_tree	high;
+	struct s_tree	*low;
+	struct s_tree	*high;
 }				t_tree;
 
 typedef struct	s_token

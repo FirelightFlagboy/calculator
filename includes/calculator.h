@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/17 21:08:47 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/17 21:48:56 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/17 22:12:11 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,7 @@ typedef struct	s_token
 }				t_token;
 
 char	*ft_read_input();
+t_token	*ft_lexer();
+void	ft_free_lexer();
+int		ft_isdigits(int c);
 #endif

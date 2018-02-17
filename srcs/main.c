@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/17 21:08:11 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/17 21:10:14 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/17 21:32:40 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,9 @@
 
 int		main(void)
 {
+	char	*res;
+
+	res = ft_read_input();
+	printf("input:%s\n", res);
 	return (0);
 }

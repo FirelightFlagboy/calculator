@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/17 21:22:31 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/17 21:25:28 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/17 21:33:14 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@ char	*ft_read_input()
 	static char	s[2048];
 	int			rt;
 
+	dprintf(2, ">>");
 	while ((rt = read(stdin->_file, s, 2048)))
 	{
 		if (rt == 2048)

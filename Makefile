@@ -6,7 +6,7 @@
 #    By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/02/17 21:03:55 by fbenneto          #+#    #+#              #
-#    Updated: 2018/02/17 21:49:50 by fbenneto         ###   ########.fr        #
+#    Updated: 2018/02/17 21:50:29 by fbenneto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ CFLAGS=-Wall -Werror -Wextra
 INC_DIR = ./includes/
 INC_NAME = \
 	calculator.h\
+	
 INCLUDE = $(addprefix $(INC_DIR), $(INC_NAME))
 INC = -I $(INC_DIR)
 

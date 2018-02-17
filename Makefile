@@ -6,7 +6,7 @@
 #    By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/02/17 21:03:55 by fbenneto          #+#    #+#              #
-#    Updated: 2018/02/17 21:47:45 by fbenneto         ###   ########.fr        #
+#    Updated: 2018/02/17 21:48:30 by fbenneto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,9 +29,7 @@ CFLAGS=-Wall -Werror -Wextra
 
 INC_DIR = ./includes/
 INC_NAME = \
-	calculator.h
-	main.c
-
+	calculator.h\
 INCLUDE = $(addprefix $(INC_DIR), $(INC_NAME))
 INC = -I $(INC_DIR)
 
@@ -39,9 +37,12 @@ INC = -I $(INC_DIR)
 # SRC #
 #######
 
+SRC_DIR =\
+	./srcs/
+	
 SRC_NAME=\
-
-SRC_DIR = ./srcs/
+	main.c\
+	ft_read_input.c\
 
 SRC = $(addprefix $(SRC_DIR), $(SRC_NAME))
 

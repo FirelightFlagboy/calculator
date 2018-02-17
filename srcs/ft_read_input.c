@@ -6,9 +6,11 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/17 21:22:31 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/17 21:33:14 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/17 21:51:29 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "calculator.h"
 
 char	*ft_read_input()
 {

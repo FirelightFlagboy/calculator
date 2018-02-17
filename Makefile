@@ -6,7 +6,7 @@
 #    By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/02/17 21:03:55 by fbenneto          #+#    #+#              #
-#    Updated: 2018/02/17 21:09:37 by fbenneto         ###   ########.fr        #
+#    Updated: 2018/02/17 21:46:54 by fbenneto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,7 +75,7 @@ all : $(NAME)
 
 $(NAME) : $(OBJ_DIR) $(OBJ_DIR)$(SRC_CONV_DIR) $(OBJ_DIR)$(SRC_BUFFER_DIR) $(OBJ)
 	@printf "[calculator: $@]\n\tdoing compiling $(BOLD)$(CYAN)$@$(NC)"
-	@$(CC) $(CFLAGS) $@ $(OBJ)
+	@$(CC) $(CFLAGS) -o $@ $(OBJ)
 	@printf ' '$(OK)'\n'
 
 $(OBJ_DIR) :

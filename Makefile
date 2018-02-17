@@ -6,7 +6,7 @@
 #    By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/02/17 21:03:55 by fbenneto          #+#    #+#              #
-#    Updated: 2018/02/17 21:57:17 by fbenneto         ###   ########.fr        #
+#    Updated: 2018/02/17 21:57:48 by fbenneto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -88,7 +88,7 @@ $(OBJ_DIR) :
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c $(INCLUDE)
 	@printf "\tcompile $(BOLD)$(YELLOW)$@$(NC) "
-	$(CC) $(CFLAGS) -o $@ -c $< $(INC)
+	@$(CC) $(CFLAGS) -o $@ -c $< $(INC)
 	@printf $(OK)'\n'
 
 clean : $(OBJ_DIR)

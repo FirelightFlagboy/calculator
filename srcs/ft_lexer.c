@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/17 22:04:29 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/18 09:12:38 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/18 09:13:58 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ t_token			*ft_lexer(char	*res)
 	t_token	*head;
 	t_token	*node;
 	char	*keyword[]={"(", ")", "+", "-", "*", "/", NULL};
+	int		n;
 	int		i;
 
 	if (!(head = ft_create_token()))
@@ -90,16 +91,18 @@ t_token			*ft_lexer(char	*res)
 	node = head;
 	while (*res)
 	{
-		if (ft_isdigits(*res))
+		n = 0;
+		if (ft_isdigits(*res) && (n = 1))
 			res = ft_add_nb(&node, res);
 		i = -1;
 		while (keyword[++i])
-			if (strncmp(keyword[i], res, strlen(keyword[i])) == 0)
+			if (strncmp(keyword[i], res, strlen(keyword[i])) == 0 && (n = 1))
 			{
 				res = ft_add_kwd(&node, res, keyword[i]);
 				break ;
 			}
-		res++;
+		if (!n)
+			res++;
 	}
 	return (head);
 }

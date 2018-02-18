@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/17 22:05:21 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/18 21:47:25 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/18 21:49:06 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int		parse_product(t_token **head)
 	dprintf(2, "enter in parse_product\n");
 	nb1 = parse_factor(head);
 	node = *head;
-	while (node->type == FACTOR)
+	while (node && node->type == FACTOR)
 	{
 		type = node->value;
 		node = node->next;
@@ -83,7 +83,7 @@ int		parse_sum(t_token *head)
 
 	dprintf(2, "enter in parse_sum\n");
 	nb1 = parse_product(&head);
-	while (head->type == SUM)
+	while (node && head->type == SUM)
 	{
 		type = head->value;
 		head = head->next;

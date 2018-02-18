@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/17 22:04:29 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/18 09:13:58 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/18 19:06:01 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ t_token			*ft_lexer(char	*res)
 {
 	t_token	*head;
 	t_token	*node;
-	char	*keyword[]={"(", ")", "+", "-", "*", "/", NULL};
+	char	*keyword[]={"(", ")", "+", "-", "*", "/", "%", NULL};
 	int		n;
 	int		i;
 

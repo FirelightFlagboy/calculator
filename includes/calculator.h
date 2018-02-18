@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/17 21:08:47 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/18 09:16:45 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/18 19:52:58 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ enum	e_type
 	NOT,
 	INT,
 	KWD,
-	OPT,
+	SUM,
+	FACTOR,
 	PTH,
 };
 

@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/17 21:08:11 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/18 20:00:56 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/18 21:36:24 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int		main(void)
 {
 	char	*res;
+	int		res;
 	t_token	*lexem;
 	t_token	*node;
 
@@ -33,6 +34,8 @@ int		main(void)
 		printf("type:%-5d value:%s\n", node->type, node->value);
 		node = node->next;
 	}
+	res = parse_sum(lexem);
+	printf("result:%d\n", res);
 	ft_free_lexer(&lexem);
 	return (0);
 }

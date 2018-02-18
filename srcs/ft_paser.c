@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/17 22:05:21 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/18 21:33:57 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/18 21:35:08 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int		parse_factor(t_token **head)
 		nb2 = parse_pth(&node);
 		if (strcmp(type, "*") == 0)
 			nb1 = nb1 * nb2;
-		else if (strcmp(type, "/"));
+		else if (strcmp(type, "/") == 0)
 			nb1 = nb1 / nb2;
 	}
 	*head = node;

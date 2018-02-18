@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/17 21:08:47 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/17 22:12:11 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/18 09:02:41 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,14 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <string.h>
+# include <errno.h>
 
 enum	e_type
 {
 	NOT,
 	INT,
+	KWD,
 	OPT,
 	PTH,
 };
@@ -41,8 +44,18 @@ typedef struct	s_token
 	struct s_token	*next;
 }				t_token;
 
+/*
+** Input
+*/
 char	*ft_read_input();
+/*
+** Lexer
+*/
 t_token	*ft_lexer();
 void	ft_free_lexer();
+/*
+** ft_type
+*/
 int		ft_isdigits(int c);
+int		ft_isspaces(int c);
 #endif

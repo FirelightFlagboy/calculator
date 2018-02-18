@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/17 22:10:32 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/17 22:12:13 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/18 08:48:56 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,4 +15,9 @@
 int		ft_isdigits(int c)
 {
 	return (c >= '0' && c <= '9');
+}
+
+int		ft_isspaces(int c)
+{
+	return (c == ' ' || c == '\n' || c == '\t' || c == '\v' || c == '\r');
 }

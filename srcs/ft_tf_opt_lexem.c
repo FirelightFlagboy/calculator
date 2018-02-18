@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/18 19:54:12 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/18 20:00:27 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/18 21:33:01 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void		ft_tf_opt_lexem(t_token **headref)
 	node = *headref;
 	while (node)
 	{
-		if (node->type = KWD)
+		if (node->type == KWD)
 			ft_change_opt(node);
 		node = node->next;
 	}

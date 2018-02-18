@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/17 21:08:47 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/18 21:38:47 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/18 21:51:24 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,10 @@ typedef struct	s_token
 	struct s_token	*next;
 }				t_token;
 
+/*
+** Print
+*/
+void	ft_print_lexem(t_token *lexem);
 /*
 ** Input
 */

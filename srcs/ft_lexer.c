@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/17 22:04:29 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/18 09:05:39 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/18 09:08:26 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void			ft_free_lexer(t_token **headref)
 
 	if (headref == NULL)
 		return ;
-	node = *headref
+	node = *headref;
 	while (node)
 	{
 		tmp = node;
@@ -55,7 +55,7 @@ char			*ft_add_nb(t_token **noderef, char *str)
 	}
 	node->value[i] = 0;
 	if (!(*noderef = ft_create_token()))
-		exit(!!dprintf(2, "error malloc ft_add_nb:%s\n", strerror(errno));
+		exit(!!dprintf(2, "error malloc ft_add_nb:%s\n", strerror(errno)));
 	node->next = *noderef;
 	return (str + i);
 }
@@ -81,7 +81,7 @@ t_token			*ft_lexer(char	*res)
 {
 	t_token	*head;
 	t_token	*node;
-	char	**keyword={"(", ")", "+", "-", "*", "/", NULL};
+	char	*keyword[]={"(", ")", "+", "-", "*", "/", NULL};
 	int		i;
 
 	if (!(head = ft_create_token()))
@@ -96,7 +96,7 @@ t_token			*ft_lexer(char	*res)
 			if (strncmp(keyword[i], res, strlen(keyword[i])))
 			{
 				res = ft_add_kwd(&node, res, keyword[i]);
-				break
+				break ;
 			}
 		res++;
 	}

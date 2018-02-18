@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/17 22:05:21 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/18 21:45:29 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/18 21:46:18 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int		parse_factor(t_token **head)
 	{
 		dprintf(2, "\terror not a digits %s\n", (*head)->value);
 	}
-	dprintf(2, "\treturn: %d", nb1);
+	dprintf(2, "\treturn: %d\n", nb1);
 	return (nb1);
 }
 int		parse_product(t_token **head)
@@ -71,7 +71,7 @@ int		parse_product(t_token **head)
 			nb1 = nb1 / nb2;
 	}
 	*head = node;
-	dprintf(2, "\treturn: %d", nb1);
+	dprintf(2, "\treturn: %d\n", nb1);
 	return (nb1);
 }
 
@@ -93,6 +93,6 @@ int		parse_sum(t_token *head)
 		else if (strcmp(type, "-") == 0)
 			nb1 = nb1 - nb2;
 	}
-	dprintf(2, "\treturn: %d", nb1);	
+	dprintf(2, "\treturn: %d\n", nb1);	
 	return (nb1);
 }

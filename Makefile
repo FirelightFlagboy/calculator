@@ -6,7 +6,7 @@
 #    By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/02/17 21:03:55 by fbenneto          #+#    #+#              #
-#    Updated: 2018/02/17 22:12:25 by fbenneto         ###   ########.fr        #
+#    Updated: 2018/02/18 09:17:04 by fbenneto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,7 @@ SRC_DIR =\
 SRC_NAME=\
 	main.c\
 	ft_read_input.c\
+	ft_clean_lexem.c\
 	ft_lexer.c\
 	ft_paser.c\
 	ft_iswhat.c\

@@ -1,37 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_clean_lexem.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/17 21:08:11 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/18 09:26:16 by fbenneto         ###   ########.fr       */
+/*   Created: 2018/02/18 09:16:02 by fbenneto          #+#    #+#             */
+/*   Updated: 2018/02/18 09:26:05 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "calculator.h"
 
-int		main(void)
+void	ft_clean_lexem(t_token **headref)
 {
-	char	*res;
-	t_token	*lexem;
+	t_token	*head;
+	t_token *nhead;
 	t_token	*node;
+	t_token	*tmp;
 
-	res = 0;
-	res = ft_read_input();
-	if (res == NULL)
-		return (0);
-	printf("input:%s\n", res);
-	if (!(lexem = ft_lexer(res)))
-		return (1);
-	ft_clean_lexem(&lexem)
-	node = lexem;
+	head = NULL;
+	tmp = NULL;
+	node = *headref;
 	while (node)
 	{
-		printf("type:%-5d value:%s\n", node->type, node->value);
+		tmp = node;
+		if (node->type != NOT)
+		{
+			if (head == NULL && (head = node))
+				nhead = node;
+			else if ((nhead->next = node))
+				nhead = nhead->next;
+			tmp = NULL;
+		}
 		node = node->next;
+		if (tmp)
+			free(tmp);
 	}
-	ft_free_lexer(&lexem);
-	return (0);
+	nhead->next = NULL;
+	*headref = head;
 }

@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/17 22:05:21 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/18 21:28:49 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/18 21:33:57 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int		parse_pth(t_token **head)
 
 	(void)nb2;
 	node = *head;
+	nb1 = 42;
 	if (node->type == PTH)
 	{
 		//TODO

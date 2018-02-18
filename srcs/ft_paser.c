@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/17 22:05:21 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/18 21:43:23 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/18 21:44:12 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int		parse_factor(t_token **head)
 	int		nb1;
 
 	nb1 = 0;
-	dprinft(2, "enter in parse_factor\n");	
+	dprintf(2, "enter in parse_factor\n");	
 	if ((*head)->type == INT)
 	{
 		nb1 = atoi((*head)->value);
@@ -56,7 +56,7 @@ int		parse_product(t_token **head)
 	int		nb1;
 	int		nb2;
 
-	dprinft(2, "enter in parse_product\n");
+	dprintf(2, "enter in parse_product\n");
 	nb1 = parse_factor(head);
 	node = *head;
 	while (node->type == FACTOR)
@@ -79,7 +79,7 @@ int		parse_sum(t_token *head)
 	int		nb2;
 	char	*type;
 
-	dprinft(2, "enter in parse_sum\n");
+	dprintf(2, "enter in parse_sum\n");
 	nb1 = parse_product(&head);
 	while (head->type == SUM)
 	{

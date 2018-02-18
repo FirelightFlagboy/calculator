@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/17 22:05:21 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/18 21:49:06 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/18 21:49:35 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int		parse_sum(t_token *head)
 
 	dprintf(2, "enter in parse_sum\n");
 	nb1 = parse_product(&head);
-	while (node && head->type == SUM)
+	while (head && head->type == SUM)
 	{
 		type = head->value;
 		head = head->next;

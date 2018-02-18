@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/17 22:04:29 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/18 09:08:26 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/18 09:08:56 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ static t_token	*ft_create_token(void)
 	node->next = 0;
 	node->type = NOT;
 	node->value[0] = 0;
+	return (node);
 }
 
 void			ft_free_lexer(t_token **headref)

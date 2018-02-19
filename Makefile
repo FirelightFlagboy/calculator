@@ -6,7 +6,7 @@
 #    By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/02/17 21:03:55 by fbenneto          #+#    #+#              #
-#    Updated: 2018/02/19 21:39:19 by fbenneto         ###   ########.fr        #
+#    Updated: 2018/02/19 22:24:42 by fbenneto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,18 +38,40 @@ INC = -I $(INC_DIR)
 # SRC #
 #######
 
+SRC_PARSER_DIR =\
+	parser/
+SRC_PARSER_NAME =\
+	ft_parser_tree.c\
+	ft_parser.c\
+	
+SRC_PARSER = $(addprefix $(SRC_PARSER_DIR), $(SRC8PARSER8NAME))
+
+SRC_LEXER_DIR =\
+	lexer/
+SRC_LEXER_NAME =\
+	ft_lexer.c\
+	ft_clean_lexem.c\
+	ft_print_lexem.c\
+	ft_tf_opt_lexem.c\
+	
+SRC_LEXER = $(addprefix $(SRC_LEXER_DIR), $(SRC_LEXER_NAME))
+	
+SRC_LIST_DIR =\
+	list/
+SRC_LIST_NAME =\
+	ft_t_token.c\
+	ft_t_tree.c\
+
+SRC_LIST = $(addprefix $(SRC_LIST_DIR), $(SRC_LIST_NAME))
+
 SRC_DIR =\
 	./srcs/
-	
 SRC_NAME=\
+	$(SRC_LEXER)\
+	$(SRC_LIST)\
+	$(SRC_PARSER)\
 	main.c\
-	ft_parser_tree.c\
 	ft_read_input.c\
-	ft_clean_lexem.c\
-	ft_tf_opt_lexem.c\
-	ft_print_lexem.c\
-	ft_lexer.c\
-	ft_parser.c\
 	ft_iswhat.c\
 
 SRC = $(addprefix $(SRC_DIR), $(SRC_NAME))
@@ -83,14 +105,29 @@ OK		= "$(GREEN)$(CHEK)$(NC)"
 
 all : $(NAME)
 
-$(NAME) : $(OBJ_DIR) $(OBJ)
+$(NAME) : $(OBJ_DIR) $(OBJ_DIR)$(SRC_LEXER_DIR) $(OBJ_DIR)$(SRC_LIST_DIR) $(OBJ_DIR)$(SRC_PARSER_DIR) $(OBJ)
 	@printf "[calculator: $@]\n\tdoing compiling $(BOLD)$(CYAN)$@$(NC)"
 	@$(CC) $(CFLAGS) -o $@ $(OBJ)
 	@printf ' '$(OK)'\n'
 
+$(OBJ_DIR)$(SRC_LEXER_DIR):
+	@printf "[calculator :$@]\n\tcreating folder $(MAJENTA)$(BOLD)$@$(NC)"
+	@mkdir -p $@
+	@printf ' '$(OK)'\n'
+
+$(OBJ_DIR)$(SRC_LIST_DIR):
+	@printf "[calculator :$@]\n\tcreating folder $(MAJENTA)$(BOLD)$@$(NC)"
+	@mkdir -p $@
+	@printf ' '$(OK)'\n'
+
+$(OBJ_DIR)$(SRC_PARSER_DIR):
+	@printf "[calculator :$@]\n\tcreating folder $(MAJENTA)$(BOLD)$@$(NC)"
+	@mkdir -p $@
+	@printf ' '$(OK)'\n'
+
 $(OBJ_DIR) :
 	@printf "[calculator :$@]\n\tcreating folder $(MAJENTA)$(BOLD)$@$(NC)"
-	@mkdir -p $(OBJ_DIR)
+	@mkdir -p $@
 	@printf ' '$(OK)'\n'
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c $(INCLUDE)

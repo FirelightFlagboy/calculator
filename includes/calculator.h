@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/17 21:08:47 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/19 22:06:27 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/19 22:12:26 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ char	*ft_read_input();
 /*
 ** Lexer
 */
+t_token	*ft_create_token(void);
 t_token	*ft_lexer();
 void	ft_clean_lexem(t_token **headref);
 void	ft_free_lexer();

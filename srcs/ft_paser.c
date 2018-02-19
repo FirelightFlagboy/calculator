@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/17 22:05:21 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/19 19:39:44 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/19 19:42:36 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int		parse_factor(t_token **head)
 		if ((*head)->type == PTH && strcmp((*head)->value, ")") == 0)
 			(*head) = (*head)->next;
 		else
-			dprintf(2, "\terror not a digits %s\n", (*head)->value);
+			dprintf(2, "\terror not a closing pth %s\n", (*head)->value);
 	}
 	else
 	{

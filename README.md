@@ -16,6 +16,14 @@ make
 - `/` make the division of two digits
 - `(` and `)` set the operation inside at the max priority
 #
+# Feature
+- [x] addition
+- [x] substraction
+- [x] multiplication
+- [x] division
+- [ ] modulo
+- [x] multi-digits
+#
 # Next Feature
 | incoming | symbol | status |
 | --- | --- | --- |

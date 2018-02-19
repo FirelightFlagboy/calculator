@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/17 22:05:21 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/19 19:38:44 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/19 19:39:44 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int		parse_factor(t_token **head)
 	else if ((*head)->type == PTH && strcmp((*head)->value, ")") == 0)
 	{
 		(*head) = (*head)->next;
-		nb1 = parse_sum();
+		nb1 = parse_sum(head);
 		if ((*head)->type == PTH && strcmp((*head)->value, ")") == 0)
 			(*head) = (*head)->next;
 		else
@@ -84,19 +84,19 @@ int		parse_product(t_token **head)
 	return (nb1);
 }
 
-int		parse_sum(t_token *head)
+int		parse_sum(t_token **head)
 {
 	int		nb1;
 	int		nb2;
 	char	*type;
 
 	dprintf(2, "enter in parse_sum\n");
-	nb1 = parse_product(&head);
-	while (head && head->type == SUM)
+	nb1 = parse_product(head);
+	while ((*head) && (*head)->type == SUM)
 	{
-		type = head->value;
-		head = head->next;
-		nb2 = parse_product(&head);
+		type = (*head)->value;
+		(*head) = (*head)->next;
+		nb2 = parse_product(head);
 		if (strcmp(type, "+") == 0)
 			nb1 = nb1 + nb2;
 		else if (strcmp(type, "-") == 0)

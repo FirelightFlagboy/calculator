@@ -1,5 +1,13 @@
 {
 	"files.associations": {
 		"calculator.h": "c"
-	}
+	},
+	"clang.cflags":[
+        "-Wall",
+        "-Werror",
+        "-Wextra",
+        "-I${workspaceRoot}/ft_printf/includes",
+        "-I${workspaceRoot}/includes",
+        "-I${workspaceRoot}"
+    ]
 }

@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/17 21:08:47 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/19 19:39:55 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/19 22:06:27 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,11 @@ int		parse_sum(t_token **head);
 int		parse_factor(t_token **head);
 int		parse_product(t_token **head);
 int		parse_pth(t_token **head);
-
+/*
+** Tree
+*/
+void	ft_ttree_free(t_tree **head);
+t_tree	*ft_ttre_create(int type, char *value, char *isneg);
 /*
 ** ft_type
 */

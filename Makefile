@@ -6,7 +6,7 @@
 #    By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/02/17 21:03:55 by fbenneto          #+#    #+#              #
-#    Updated: 2018/02/19 22:24:42 by fbenneto         ###   ########.fr        #
+#    Updated: 2018/02/21 21:57:55 by fbenneto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,7 @@ SRC_PARSER_DIR =\
 SRC_PARSER_NAME =\
 	ft_parser_tree.c\
 	ft_parser.c\
+	print_tree.c\
 	
 SRC_PARSER = $(addprefix $(SRC_PARSER_DIR), $(SRC8PARSER8NAME))
 

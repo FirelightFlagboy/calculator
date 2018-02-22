@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/21 21:51:33 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/22 22:19:21 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/22 22:19:56 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	ft_printf_ast_util(t_tree *head, int space)
 {
 	int i;
 	
-	if (head)
+	if (head == NULL)
 		return ;
 	space += 5;
 	ft_printf_ast_util(head->high, space);

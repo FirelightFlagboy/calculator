@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/21 21:51:33 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/21 22:00:17 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/22 22:01:59 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,7 @@ static void	ft_printf_ast_util(t_tree *head, int space)
 	printf("\n");
 	for (i = 5; i < space; i++)
 		printf(" ");
-	if (head->type == INT)
-		printf("%s\n", head->nb);
-	else
-		printf("%s\n", head->opt);
+	printf("%s\n", head->token->value);
 	ft_printf_ast(head->low, space);
 }
 

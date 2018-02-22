@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/22 21:14:18 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/22 21:54:56 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/22 22:10:46 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ t_tree *insert_tree(t_tree *tree, t_token *input, int index)
 		input = input->next;
 	}
 	tree->token = input;
+	return (tree);
 }
 
 t_tree *cut_input_and_build_leaf(t_tree *tree, t_token *input, int prio)

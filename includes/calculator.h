@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/17 21:08:47 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/21 21:57:31 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/22 21:59:49 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,17 @@
 enum	e_type
 {
 	NOT,
-	INT,
-	KWD,
 	SUM,
 	FACTOR,
+	INT,
 	PTH,
+	KWD,
 };
 
 typedef struct	s_tree
 {
 	int				type;
+	t_token			*token;
 	int				nb;
 	char			*opt;
 	struct s_tree	*low;
@@ -65,6 +66,8 @@ void	ft_tf_opt_lexem(t_token **headref);
 /*
 ** Parser
 */
+t_tree	*parser_tree(t_token **head);
+t_tree	*parser_tree_2(t_token **head);
 int		parse_sum(t_token **head);
 int		parse_factor(t_token **head);
 int		parse_product(t_token **head);

@@ -6,31 +6,11 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/17 22:05:21 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/19 21:39:28 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/22 20:42:15 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "calculator.h"
-
-int		parse_pth(t_token **head)
-{
-	t_token	*node;
-	int		nb1;
-	int		nb2;
-
-	(void)nb2;
-	node = *head;
-	nb1 = 42;
-	if (node->type == PTH)
-	{
-		//TODO
-	}
-	else
-		nb1 = atoi(node->value);
-	node = node->next;
-	*head = node;
-	return (nb1);
-}
 
 int		parse_factor(t_token **head)
 {

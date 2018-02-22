@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/17 21:08:47 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/22 21:59:49 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/22 22:02:54 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,13 @@ enum	e_type
 	KWD,
 };
 
+typedef struct	s_token
+{
+	int				type;
+	char			value[65];
+	struct s_token	*next;
+}				t_token;
+
 typedef struct	s_tree
 {
 	int				type;
@@ -38,13 +45,6 @@ typedef struct	s_tree
 	struct s_tree	*low;
 	struct s_tree	*high;
 }				t_tree;
-
-typedef struct	s_token
-{
-	int				type;
-	char			value[65];
-	struct s_token	*next;
-}				t_token;
 
 /*
 ** Print

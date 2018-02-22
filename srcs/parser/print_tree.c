@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/21 21:51:33 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/22 22:16:34 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/22 22:17:36 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ static void	ft_printf_ast_util(t_tree *head, int space)
 	if (head)
 		return ;
 	space += 5;
-	ft_printf_ast(head->high, space);
+	ft_printf_ast_util(head->high, space);
 	printf("\n");
 	for (i = 5; i < space; i++)
 		printf(" ");
 	printf("%s\n", head->token->value);
-	ft_printf_ast(head->low, space);
+	ft_printf_ast_util(head->low, space);
 }
 
 void	ft_printf_ast(t_tree *head)

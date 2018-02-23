@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/22 21:14:18 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/23 21:16:16 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/23 21:20:59 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ t_tree *cut_input_and_build_leaf(t_tree *tree, t_token *input, int prio)
 	input_left = NULL;
 	input_right = NULL;
 	index_input = search_input(input, prio);
-	dprintf(2, "index: %d prio: %d\n", index_input, prio);
+	dprintf(2, "index: %+d prio: %+d\n", index_input, prio);
 	if (index_input != -1)
 	{
 		tree = insert_tree(tree, input, index_input);

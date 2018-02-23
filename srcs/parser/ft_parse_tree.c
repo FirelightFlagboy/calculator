@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 21:36:25 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/22 22:16:03 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/23 21:38:51 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,25 +20,55 @@
 **  /\  /\
 **  2 3 4 5
 */
+
+int			search_input_tree(t_token **head, int type)
+{
+	t_token	*node;
+	int		index;
+
+	node = *head;
+	index = 0;
+	while (node)
+	{
+		if (node->type == type)
+			return (index);
+		else if (node->type != INT)
+			break;
+		index++;
+	}
+	return (-1);
+}
+
 // void		parse_factor_tree(t_token **head, t_tree **tree)
 // {
-// 	parse_factor_tree(head, tree);
 // }
 
 // void		parse_product_tree(t_token **head, t_tree **tree)
 // {
-// 	parse_product_tree(head, tree);
 // }
 
-// void		parse_sum_tree(t_token **head, t_tree **tree)
-// {
-// 	parse_product_tree(head, tree);
-// }
+void		parse_sum_tree(t_token **head, t_tree **tree)
+{
+	t_tree	*node;
+	t_token	*token;
+	int		index;
 
-// t_tree		*parser_tree(t_token **head)
-// {
-// 	t_tree *tree;
+	printf("parse sum : \n");
+	index = search_input_tree(head, SUM);
+	token = *head;
+	printf("\tindex : %d\n", index)
+	while (index >= 0)
+	{
+		token = token->next;
+		index--;
+	}
+	printf("\tvalue : %d\n", token->value)
+}
 
-// 	parse_sum_tree(head, &tree);
-// 	return (tree);
-// }
+t_tree		*parser_tree(t_token **head)
+{
+	t_tree	*tree;
+
+	parse_sum_tree(head, &tree);
+	return (tree);
+}

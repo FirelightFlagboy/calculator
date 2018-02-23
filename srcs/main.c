@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/17 21:08:11 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/23 21:17:33 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/23 21:22:15 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int		main(void)
 	// r = parse_sum(&lexem);
 	// printf("\nresult:%d\n", r);
 	lexem = node;
-	tree = parser_tree_2(&lexem);
+	tree = parser_tree(&lexem);
 	ft_printf_ast(tree);
 	ft_free_lexer(&node);
 	return (0);

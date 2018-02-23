@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 21:36:25 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/23 21:41:14 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/23 21:41:49 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int			search_input_tree(t_token **head, int type)
 			return (index);
 		else if (node->type != INT)
 			break;
+		node = node->next;
 		index++;
 	}
 	return (-1);

@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/17 21:08:47 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/22 22:06:52 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/23 21:48:46 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ void	ft_tf_opt_lexem(t_token **headref);
 /*
 ** Parser
 */
+void	cut_input(t_token *input, t_token **i_l, t_token **i_r, int index);
 t_tree	*parser_tree(t_token **head);
 t_tree	*parser_tree_2(t_token **head);
 int		parse_sum(t_token **head);

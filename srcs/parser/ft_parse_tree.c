@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 21:36:25 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/23 21:39:44 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/23 21:40:21 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void		parse_sum_tree(t_token **head, t_tree **tree)
 	t_token	*token;
 	int		index;
 
+	(void)tree;
 	printf("parse sum : \n");
 	index = search_input_tree(head, SUM);
 	token = *head;

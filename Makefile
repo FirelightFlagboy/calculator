@@ -6,7 +6,7 @@
 #    By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/02/17 21:03:55 by fbenneto          #+#    #+#              #
-#    Updated: 2018/02/22 22:12:52 by fbenneto         ###   ########.fr        #
+#    Updated: 2018/02/24 12:50:07 by fbenneto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,6 @@ SRC_PARSER_DIR =\
 	parser/
 SRC_PARSER_NAME =\
 	ft_parse_tree.c\
-	ft_parse_tree_2.c\
 	ft_parser.c\
 	print_tree.c\
 	

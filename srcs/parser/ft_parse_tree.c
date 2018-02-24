@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 21:36:25 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/24 11:08:49 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/24 11:11:33 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,10 @@ t_tree	*parse_factor_tree(t_token **head)
 		node = parse_sum_tree(head);
 		(*head) = (*head)->next;
 	}
-	dprintf(2, "\tparse_factor_tree return:%p\n", node);
+	dprintf(2, "\tparse_factor_tree return: adr : %p", node);
+	if (node)
+		dprintf(2, " : val : %s", node->val);
+	dprintf(2, "\n");
 	return (node);
 }
 

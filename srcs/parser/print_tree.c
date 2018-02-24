@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/21 21:51:33 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/24 11:42:01 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/24 14:08:08 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ static void	ft_printf_ast_util(t_tree *head, int space, int count)
 
 void	ft_printf_ast(t_tree *head)
 {
-	printf("print ast : %p\n", head);
+	printf("\nPrint ast\n");
 	ft_printf_ast_util(head, 0, 1);
 }

@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/21 21:51:33 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/24 11:23:10 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/24 11:23:42 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void	ft_printf_ast_util(t_tree *head, int space, int count)
 		printf("/");
 	}
 	printf("\n");
-	for (i = 5; i < space; i++)
+	for (i = 5; i < space - 1; i++)
 		printf(" ");
 
 	printf("%d:%s\n", count, head->val);

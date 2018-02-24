@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/17 21:08:47 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/24 13:40:25 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/24 13:53:36 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,6 @@ int		eval_tree(t_tree *tree);
 ** Tree
 */
 void	ft_ttree_free(t_tree **head);
-t_tree	*ft_ttre_create(int type, char *value, char *isneg);
 /*
 ** ft_type
 */

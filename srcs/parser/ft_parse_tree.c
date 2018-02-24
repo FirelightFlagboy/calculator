@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 21:36:25 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/24 11:11:33 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/24 11:11:55 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ t_tree		*parser_tree(t_token **head)
 {
 	t_tree	*tree;
 
-	tree = parse_sum_tree(head);
 	tree = NULL;
+	tree = parse_sum_tree(head);
 	return (tree);
 }

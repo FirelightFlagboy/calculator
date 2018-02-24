@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/17 21:08:11 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/24 12:47:38 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/24 12:48:09 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	ft_parser_ast(t_token *lexem)
 	
 	tree = parser_tree(&lexem);
 	ft_printf_ast(tree);
-	dprintf(2, "free tree\n");
 	ft_ttree_free(&tree);
 }
 
@@ -48,7 +47,6 @@ int		main(void)
 	ft_print_lexem(lexem);
 	ft_parser_direct(lexem);
 	ft_parser_ast(lexem);
-	dprintf(2, "free lexer\n");
 	ft_free_lexer(&lexem);
 	return (0);
 }

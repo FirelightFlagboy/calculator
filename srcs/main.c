@@ -6,18 +6,34 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/17 21:08:11 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/23 21:22:15 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/24 12:44:17 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "calculator.h"
+
+void	ft_parser_direct(t_token *lexem)
+{
+	int		r;
+	
+	r = parse_sum(&lexem);
+	printf("\ndirect result:%d\n", r);
+}
+
+void	ft_parser_ast(t_token *lexem)
+{
+	t_tree	*tree;
+	
+	tree = parser_tree(&lexem);
+	ft_printf_ast(tree);
+	ft_ttree_free(&tree);
+}
 
 int		main(void)
 {
 	char	*res;
 	t_token	*lexem;
 	t_token *node;
-	t_tree	*tree;
 
 	res = 0;
 	res = ft_read_input();
@@ -28,15 +44,10 @@ int		main(void)
 		return (1);
 	ft_clean_lexem(&lexem);
 	ft_tf_opt_lexem(&lexem);
+	printf("lexer :\n");
 	ft_print_lexem(lexem);
-	printf("\n");
-	node = lexem;
-	// int		r;
-	// r = parse_sum(&lexem);
-	// printf("\nresult:%d\n", r);
-	lexem = node;
-	tree = parser_tree(&lexem);
-	ft_printf_ast(tree);
+	ft_parser_direct(lexem);
+	ft_parser_ast(lexem);
 	ft_free_lexer(&node);
 	return (0);
 }

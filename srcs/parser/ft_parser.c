@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/17 22:05:21 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/22 20:42:15 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/24 12:44:43 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int		parse_factor(t_token **head)
 	int		nb1;
 
 	nb1 = 0;
-	dprintf(2, "enter in parse_factor\n");	
 	if ((*head)->type == INT)
 	{
 		nb1 = atoi((*head)->value);
@@ -35,7 +34,6 @@ int		parse_factor(t_token **head)
 		nb1 = parse_factor(head);
 		nb1 = -nb1;
 	}
-	dprintf(2, "\tparse_factor return: %d\n", nb1);
 	return (nb1);
 }
 int		parse_product(t_token **head)
@@ -45,7 +43,6 @@ int		parse_product(t_token **head)
 	int		nb1;
 	int		nb2;
 
-	dprintf(2, "enter in parse_product\n");
 	nb1 = parse_factor(head);
 	node = *head;
 	while (node && node->type == FACTOR)
@@ -59,7 +56,6 @@ int		parse_product(t_token **head)
 			nb1 = nb1 / nb2;
 	}
 	*head = node;
-	dprintf(2, "\tparse_product return: %d\n", nb1);
 	return (nb1);
 }
 
@@ -69,7 +65,6 @@ int		parse_sum(t_token **head)
 	int		nb2;
 	char	*type;
 
-	dprintf(2, "enter in parse_sum\n");
 	nb1 = parse_product(head);
 	while ((*head) && (*head)->type == SUM)
 	{
@@ -81,6 +76,5 @@ int		parse_sum(t_token **head)
 		else if (strcmp(type, "-") == 0)
 			nb1 = nb1 - nb2;
 	}
-	dprintf(2, "\tin parse_sum return: %d\n", nb1);	
 	return (nb1);
 }

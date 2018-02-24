@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 21:36:25 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/24 11:11:55 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/24 11:13:09 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ t_tree	*ft_tree_create(int type, char *val)
 {
 	t_tree	*node;
 
+	dprintf(2, "create token : ty : %d : val : %s\n", type, val);
 	if (!(node = (t_tree*)malloc(sizeof(t_tree))))
 		return (NULL);
 	node->type = type;

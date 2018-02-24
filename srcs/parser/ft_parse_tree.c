@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 21:36:25 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/24 11:13:09 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/24 11:28:50 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,18 +70,20 @@ t_tree	*parse_sum_tree(t_token **token)
 	t_tree	*branch;
 	t_tree	*head;
 
-	(void)head;
+	head = NULL;
 	branch = NULL;
 	high = parse_factor_tree(token);
 	if ((*token)->type == SUM)
 	{
 		branch = ft_tree_create(SUM, (*token)->value);
+		if (head == NULL)
+			head = branch;
 		(*token) = (*token)->next;
 		low = parse_factor_tree(token);
 		branch->high = high;
 		branch->low = low;
 	}
-	return (branch);
+	return (head);
 }
 
 t_tree		*parser_tree(t_token **head)

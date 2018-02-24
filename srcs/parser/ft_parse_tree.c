@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 21:36:25 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/23 21:57:50 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/24 11:07:37 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,48 +21,70 @@
 **  2 3 4 5
 */
 
-int			search_input_tree(t_token *token, int type)
+t_tree	*ft_tree_create(int type, char *val)
 {
-	int		index;
+	t_tree	*node;
 
-	index = 0;
-	while (token)
-	{
-		if (token->type == type)
-			return (index);
-		else if (token->type != INT)
-			break;
-		token = token->next;
-		index++;
-	}
-	return (-1);
+	if (!(node = (t_tree*)malloc(sizeof(t_tree))))
+		return (NULL);
+	node->type = type;
+	node->val = val;
+	node->high = NULL;
+	node->low = NULL;
+	return (node);
 }
 
-// void		parse_factor_tree(t_token **head, t_tree **tree)
-// {
-// }
+t_tree	*parse_factor_tree(t_token **head)
+{
+	t_tree	*node;
+
+	node = NULL;
+	dprintf(2, "enter in parse_factor_tree\n");
+	if ((*head)->type == INT)
+	{
+		node = ft_tree_create(INT, (*head)->type);
+		(*head) = (*head)->next;
+	}
+	else if ((*head)->type = PTH && strcmp((*head)->value, "(") == 0)
+	{
+		(*head) = (*head)->next;
+		node = parse_sum_tree(head);
+		(*head) = (*head)->next;
+	}
+	dprintf(2, "\tparse_factor_tree return:%p\n", node);
+	return (node);
+}
 
 // void		parse_product_tree(t_token **head, t_tree **tree)
 // {
 // }
 
-t_tree	*parse_sum_tree(t_token *token)
+t_tree	*parse_sum_tree(t_token **token)
 {
-	t_tree	*node;
-	t_token	*t_right;
-	t_token	*t_left;
-	int		index;
+	t_tree	*high;
+	t_tree	*low;
+	t_tree	*branch;
+	t_tree	*head;
 
-	index = search_input_tree(token, SUM);
-	cut_input(token, &t_left, &t_right, index);
-	node = insert_tree(token, index);
+	(void)head;
+	branch = NULL;
+	high = parse_factor_tree(token);
+	if ((*token)->type == SUM)
+	{
+		branch = ft_tree_create(SUM, (*token)->value);
+		(*token) = (*token)->next;
+		low = parse_factor_tree(token);
+		branch->high = high;
+		branch->low = low;
+	}
+	return (branch);
 }
 
 t_tree		*parser_tree(t_token **head)
 {
 	t_tree	*tree;
 
-	tree = parse_sum_tree(*head);
+	tree = parse_sum_tree(head);
 	tree = NULL;
 	return (tree);
 }

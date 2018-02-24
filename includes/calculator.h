@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/17 21:08:47 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/23 21:48:46 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/24 10:59:47 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct	s_tree
 {
 	int				type;
 	t_token			*token;
+	char			*val;
 	int				nb;
 	char			*opt;
 	struct s_tree	*low;

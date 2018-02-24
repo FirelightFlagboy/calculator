@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 21:36:25 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/24 14:01:50 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/24 14:03:03 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ t_tree	*parse_factor_tree(t_token **head)
 	node = NULL;
 	if ((*head) && (*head)->type == INT)
 	{
-		node = ft_create_tree(INT, (*head)->value);
+		node = ft_create_tree((*head)->type, (*head)->value);
 		(*head) = (*head)->next;
 	}
 	else if ((*head) && (*head)->type == PTH && strcmp((*head)->value, "(") == 0)

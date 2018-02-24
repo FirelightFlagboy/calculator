@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/24 13:29:32 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/24 14:00:24 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/24 14:04:18 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int		eval_tree_sum(t_tree *tree)
 	if (strcmp(tree->val, "+") == 0)
 		return (eval_tree(tree->high) + eval_tree(tree->low));
 	else if (strcmp(tree->val, "-") == 0)
-		return (eval_tree(tree->high) + eval_tree(tree->low));
+		return (eval_tree(tree->high) - eval_tree(tree->low));
 	return (0);
 }
 
@@ -42,7 +42,7 @@ int		eval_tree(t_tree *tree)
 {
 	if (tree == NULL)
 		return (0);
-	printf("tree : %s : %d\n", tree->val, tree->type);
+	printf("tree : %s\n");
 	if (tree->type == INT)
 	{
 		printf("\ttree : int\n");

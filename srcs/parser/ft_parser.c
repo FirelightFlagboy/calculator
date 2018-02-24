@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/17 22:05:21 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/24 12:44:43 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/24 14:10:38 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,18 @@ int		parse_factor(t_token **head)
 	int		nb1;
 
 	nb1 = 0;
-	if ((*head)->type == INT)
+	if ((*head) && (*head)->type == INT)
 	{
 		nb1 = atoi((*head)->value);
 		(*head) = (*head)->next;
 	}
-	else if ((*head)->type == PTH && strcmp((*head)->value, "(") == 0)
+	else if ((*head) && (*head)->type == PTH && strcmp((*head)->value, "(") == 0)
 	{
 		(*head) = (*head)->next;
 		nb1 = parse_sum(head);
 		(*head) = (*head)->next;
 	}
-	else if ((*head)->type == SUM && strcmp((*head)->value, "-") == 0)
+	else if ((*head) && (*head)->type == SUM && strcmp((*head)->value, "-") == 0)
 	{
 		(*head) = (*head)->next;
 		nb1 = parse_factor(head);

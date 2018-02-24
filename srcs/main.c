@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/17 21:08:11 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/24 12:51:00 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/24 13:52:33 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,13 @@ void	ft_parser_direct(t_token *lexem)
 void	ft_parser_ast(t_token *lexem)
 {
 	t_tree	*tree;
+	int		r;
 	
 	printf("\nParser\n");
 	tree = parser_tree(&lexem);
 	ft_printf_ast(tree);
+	r = eval_tree(tree);
+	printf("\nast result:%d\n", r);
 	ft_ttree_free(&tree);
 }
 

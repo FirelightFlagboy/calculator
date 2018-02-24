@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/17 21:08:47 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/24 11:10:10 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/24 13:40:25 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,7 @@ typedef struct	s_token
 typedef struct	s_tree
 {
 	int				type;
-	t_token			*token;
 	char			*val;
-	int				nb;
 	char			*opt;
 	struct s_tree	*low;
 	struct s_tree	*high;
@@ -68,13 +66,15 @@ void	ft_tf_opt_lexem(t_token **headref);
 ** Parser
 */
 t_tree	*parse_sum_tree(t_token **token);
-void	cut_input(t_token *input, t_token **i_l, t_token **i_r, int index);
 t_tree	*parser_tree(t_token **head);
-t_tree	*parser_tree_2(t_token **head);
 int		parse_sum(t_token **head);
 int		parse_factor(t_token **head);
 int		parse_product(t_token **head);
 int		parse_pth(t_token **head);
+/*
+** Eval
+*/
+int		eval_tree(t_tree *tree);
 /*
 ** Tree
 */

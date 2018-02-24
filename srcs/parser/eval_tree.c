@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/24 13:29:32 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/24 14:04:18 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/24 14:04:42 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int		eval_tree(t_tree *tree)
 {
 	if (tree == NULL)
 		return (0);
-	printf("tree : %s\n");
+	printf("tree : %s\n", tree->val);
 	if (tree->type == INT)
 	{
 		printf("\ttree : int\n");

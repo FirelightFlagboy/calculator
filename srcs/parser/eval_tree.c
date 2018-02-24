@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/24 13:29:32 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/24 13:51:34 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/24 13:58:42 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,21 @@ int		eval_tree(t_tree *tree)
 {
 	if (tree == NULL)
 		return (0);
+	printf("tree : %s\n", tree->val);
 	if (tree->type == INT)
+	{
+		printf("\ttree : int\n");
 		return (atoi(tree->val));
+	}
 	if (tree->type == SUM)
+	{
+		printf("\ttree : sum\n");
 		return (eval_tree_sum(tree));
+	}
 	if (tree->type == FACTOR)
+	{
+		printf("\ttree : product\n");
 		return (eval_tree_product(tree));
+	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 21:36:25 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/24 12:11:43 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/24 12:12:39 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,12 +64,10 @@ t_tree	*parse_product_tree(t_token **token)
 	t_tree	*high;
 	t_tree	*low;
 	t_tree	*branch;
-	int		ct;
 
 	branch = NULL;
-	ct = 0;
 	high = parse_factor_tree(token);
-	if ((*token) && (*token)->type == SUM)
+	if ((*token) && (*token)->type == FACTOR)
 	{
 		branch = ft_create_tree(SUM, (*token)->value);
 		(*token) = (*token)->next;

@@ -6,20 +6,11 @@
 /*   By: fbenneto <f.benneto@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 21:36:25 by fbenneto          #+#    #+#             */
-/*   Updated: 2018/02/24 12:45:29 by fbenneto         ###   ########.fr       */
+/*   Updated: 2018/02/24 13:04:18 by fbenneto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "calculator.h"
-
-/*
-** 2*3+4*5:
-**      +
-**    /  \
-**   *    *
-**  /\  /\
-**  2 3 4 5
-*/
 
 t_tree	*ft_create_tree(int type, char *val)
 {

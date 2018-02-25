@@ -17,6 +17,10 @@ make
 - `(` and `)` set the operation inside at the max priority
 #
 # Feature
+- [x] use a lexer
+- [x] use a parser
+- [x] build a AST (abstract syntax tree)
+- [x] eval the AST
 - [x] addition
 - [x] substraction
 - [x] multiplication
